@@ -37,7 +37,18 @@ namespace DogPark.Server.Controllers
         [Produces(ContentTypes.XmlResourceDescriptor, ContentTypes.JsonResourceDescriptor)]
         public IActionResult WebFinger([FromQuery] string resource)
         {
-            return StatusCode(503); // ToDo
+            if (!Uri.TryCreate(resource, UriKind.Absolute, out var uri))
+            {
+                return BadRequest();
+            }
+
+            switch (uri.Scheme)
+            {
+                default:
+                {
+                    return UnprocessableEntity();
+                }
+            }
         }
     }
 }
