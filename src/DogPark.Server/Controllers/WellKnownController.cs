@@ -23,14 +23,14 @@ namespace DogPark.Server.Controllers
         [Produces(ContentTypes.XmlResourceDescriptor)]
         public ActionResult<XmlResourceDescriptorModel> HostMeta()
         {
-            return new HostMetaModel(Url).ToXrd();
+            return new HostMetaModel(Url).ToXmlResourceDescriptor();
         }
 
         [HttpGet(WellKnownUriRegistryTypes.WebHostMetadataJson)]
         [Produces(ContentTypes.JsonResourceDescriptor)]
         public ActionResult<JsonResourceDescriptorModel> HostMetaJson()
         {
-            return new HostMetaModel(Url).ToJrd();
+            return new HostMetaModel(Url).ToJsonResourceDescriptor();
         }
 
         [HttpGet(WellKnownUriRegistryTypes.WebFinger)]

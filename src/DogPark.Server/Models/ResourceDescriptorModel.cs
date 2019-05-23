@@ -25,12 +25,12 @@ namespace DogPark.Server.Models
 
         public IEnumerable<ResourceDescriptorLinkRelationModel>? Links { get; set; }
 
-        public JsonResourceDescriptorModel ToJrd()
+        public JsonResourceDescriptorModel ToJsonResourceDescriptor()
         {
             return (JsonResourceDescriptorModel)this;
         }
 
-        public XmlResourceDescriptorModel ToXrd()
+        public XmlResourceDescriptorModel ToXmlResourceDescriptor()
         {
             return (XmlResourceDescriptorModel)this;
         }
